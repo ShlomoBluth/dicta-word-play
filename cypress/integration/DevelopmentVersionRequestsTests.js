@@ -4,10 +4,10 @@
 
 ////run tests on requests from word play run 
 
-describe('RequestsTests',()=>{
+describe('DevelopmentVersionRequestsTests',()=>{
     
     beforeEach(() => {
-        cy.visit('https://wordplay.dicta.org.il/')
+        cy.visit('https://dev--silly-brown-3b035d.netlify.app/')
     })
     
   
