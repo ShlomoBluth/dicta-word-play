@@ -1,5 +1,10 @@
 {
     "projectId": "j1zq4o",
     "screenshotOnRunFailure": false,
-    "defaultCommandTimeout": 10000
+    "defaultCommandTimeout": 10000,
+    "baseUrl":"https://dev--silly-brown-3b035d.netlify.app/",
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "configFile": "reporter-config.json"
+    }
 }

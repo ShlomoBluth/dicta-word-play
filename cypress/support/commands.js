@@ -24,7 +24,7 @@ Cypress.Commands.add('tipsoundplayUrl',({message='',delaySeconds=0})=>{
 Cypress.Commands.add('wordplayRun',()=>{
   cy.get('input[id*="search-input"]').type('שם')
   cy.get('.v-clip').should('not.exist')
-  cy.get('button[class*="search-btn"]').click()
+  cy.get('button[class*="search-btn"]').click({force: true})
 })
 
 Cypress.Commands.add('wordplayRequest',({url,status=200,message='',delaySeconds=0})=>{

@@ -2,15 +2,35 @@
 
 //run basic tests on word play
 
-describe('basicTests',()=>{
+let sizes = [[1000, 660]]//'iphone-x',
 
-    beforeEach(() => {
-        cy.visit('https://wordplay.dicta.org.il/')
-      })
+sizes.forEach((size) => {
+
+    describe('basicTests',()=>{
+
+        beforeEach(() => {
+            if (Cypress._.isArray(size)) {
+                Cypress.config({
+                    viewportWidth: size[0],
+                    viewportHeight: size[1]
+                })
+                cy.viewport(size[0], size[1])
+            } else {
+                Cypress.config({
+                    viewportWidth: 375,
+                    viewportHeight: 812
+                })
+                cy.viewport(size)
+            }
+            cy.visit('/')
+        })
+        
+        it('Word play nakdan',()=>{
+            cy.wordplayRun()
+            cy.get('#common-results',{timeout:60000}).should('contain','נַפְשָׁם')
+        })
     
-    it('Word play nakdan',()=>{
-        cy.wordplayRun()
-        cy.get('#common-results').should('contain','נַפְשָׁם')
     })
 
 })
+
