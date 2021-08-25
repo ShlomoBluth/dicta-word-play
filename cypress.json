@@ -6,6 +6,11 @@
     "failOnStatusCode": false,
     "reporter": "cypress-multi-reporters",
     "reporterOptions": {
-        "configFile": "reporter-config.json"
+        "configFile": "dicta-shared/reporter-config.json"
+    },
+    "env":{
+        "TOOL_TESTS":true,
+        "REQUESTS_TESTS":true,
+        "RECORD_KEY":"57508d74-1648-4b1a-af4f-2576b512e4f9"
     }
 }
