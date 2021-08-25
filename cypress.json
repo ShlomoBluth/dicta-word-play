@@ -3,6 +3,7 @@
     "screenshotOnRunFailure": false,
     "defaultCommandTimeout": 10000,
     "baseUrl":"https://dev--silly-brown-3b035d.netlify.app/",
+    "failOnStatusCode": false,
     "reporter": "cypress-multi-reporters",
     "reporterOptions": {
         "configFile": "reporter-config.json"
