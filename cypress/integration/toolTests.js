@@ -2,23 +2,33 @@
 
 //run basic tests on word play
 
-let sizes = [[1000, 660]]//'iphone-x',
+const urls = new Map();
+urls.set('live',Cypress.env('LIVE_URL'))
+urls.set('dev',Cypress.env('DEV_URL')) 
 
-sizes.forEach((size) => {
+const sizes= new Map();
+sizes.set('desktop',[1000, 660])
+//sizes.set('mobile','iphone-x')
 
-    describe('basicTests',()=>{
 
-        beforeEach(() => {
-            cy.screenSize({size:size})
-            cy.visitpage({url:'/'})
-        })
-        
-        it('Word play nakdan',()=>{
-            cy.wordplayRun()
-            cy.get('#common-results',{timeout:60000}).should('contain','נַפְשָׁם')
-        })
+urls.forEach((urlValue,urlKey)=>{
+
+    sizes.forEach((sizeValue,sizeKey) => {
+
     
-    })
+        describe('toolTests '+urlKey+' '+sizeKey,()=>{
+    
+            beforeEach(() => {
+                cy.screenSize({size:sizeValue})
+                cy.visitpage({url:urlValue})
+            })
 
+            it('Word play nakdan',()=>{
+                cy.wordplayRun()
+                cy.get('#common-results',{timeout:60000}).should('contain','נַפְשָׁם')
+            })
+        
+        })   
+    })
 })
 
