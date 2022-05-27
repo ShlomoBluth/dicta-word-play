@@ -8,7 +8,7 @@ urls.set('dev',Cypress.env('DEV_URL'))
 
 const sizes= new Map();
 sizes.set('desktop',[1000, 660])
-//sizes.set('mobile','iphone-x')
+sizes.set('mobile','iphone-x')
 
 
 urls.forEach((urlValue,urlKey)=>{
