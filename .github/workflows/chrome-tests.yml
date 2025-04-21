@@ -27,6 +27,12 @@ jobs:
         submodules: true
 
 
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14.18.0'
+
+
     - name: Install a project with a clean slate
       run: |
         npm install --save-dev cypress@12.1.0
