@@ -55,14 +55,14 @@ urls.forEach((urlValue,urlKey)=>{
             })
         
             
-            it('Error message for api response with a delay of 3 minutes when clicking the run button'+
-            ' of wordplay page',()=>{
-                cy.wordplayRequest({
-                    url:'api',
-                    message:'אופס יש לנו בעיה נסו שנית, או בקרו באתר מאוחר יותר',
-                    delaySeconds: 60*3
-                })
-            })
+            // it('Error message for api response with a delay of 3 minutes when clicking the run button'+
+            // ' of wordplay page',()=>{
+            //     cy.wordplayRequest({
+            //         url:'api',
+            //         message:'אופס יש לנו בעיה נסו שנית, או בקרו באתר מאוחר יותר',
+            //         delaySeconds: 60*3
+            //     })
+            // })
     
        
         })

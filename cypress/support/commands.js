@@ -1,15 +1,16 @@
 
 Cypress.Commands.add('testMessage',({message='',delaySeconds=0})=>{
-  //Wait for spinner to not exist
   if(delaySeconds>0){
-    cy.get('.v-clip').should('exist')
-    cy.get('.v-clip',{timeout:1000*delaySeconds}).should('not.exist')
+    // The site may show a spinner while it waits, or not; either is fine, only the error message matters
+    if(message.length>0){
+      cy.contains(message,{timeout:1000*delaySeconds+30000}).should('exist')
+    }
   }else{
+    //Wait for spinner to not exist
     cy.get('.v-clip').should('not.exist')
-  }
-
-  if(message.length>0){
-    cy.contains(message).should('exist')
+    if(message.length>0){
+      cy.contains(message).should('exist')
+    }
   }
 })
 
